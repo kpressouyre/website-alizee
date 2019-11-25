@@ -1,0 +1,22 @@
+{% url 'home:index' as home_index %}
+{% url 'home:about' as home_about %}
+{% url 'product:index' as product_index %}
+
+<div class="main-menu">
+        <nav>
+            <ul class="menu-list">
+                <li class="{% if home_index == request.path %}active{% endif %}">
+                    <a class='effect' href="{{ home_index }}">Home</a>
+                </li>
+                <li class="{% if product_index == request.path %}active{% endif %}">
+                    <a href="{{ product_index }}">Product</a>
+                </li>
+                <li class="{% if home_about == request.path %}active{% endif %}">
+                    <a href="{{ home_about }}">About</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>

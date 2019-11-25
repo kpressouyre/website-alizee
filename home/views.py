@@ -1,0 +1,22 @@
+from django.shortcuts import render
+from django.http import HttpResponse, Http404
+from .models import About, Contact
+
+from product.models import Product
+
+def index(request):
+    about = About.objects.get(pk=1)
+    contact = Contact.objects.get(pk=1)
+    product = Product.objects.last()
+    return render(request, 'index.html', {'about': about, 'contact': contact, 'product': product})
+
+def about(request):
+    try:
+        about = About.objects.get(pk=1)
+    except Product.DoesNotExist:
+        raise Http404("about does not exist")
+    return render(request, 'about.html', {'about': about})
+
+def contact(request):
+    contact = Contact.objects.get(pk=1)
+    return render(request, 'contact.html', {'contact': contact})

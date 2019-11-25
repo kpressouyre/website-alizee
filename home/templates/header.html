@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>A. by Alizée Royer</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+
+		{% load static %}
+		<link rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto:400,600,700%7CLato:400,700' type='text/css' media='all' />
+		<link rel="stylesheet" href="{% static 'css/font.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/effect.scss' %}" />
+		<link rel="stylesheet" href="{% static 'css/justified-gallery.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+	</head>
+
+<body class="home">
+	<!-- Wrapper Site -->
+	<div id="main-content">
+		{% include 'mobile-menu.html' %}
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-3">
+					<div class="header affix">
+						<div class="table">
+							<div class="table-cell">
+								<!-- Logo -->
+								<div class="logo">
+									<a href="#">A. by Alizée Royer</a>
+								</div>
+								<!-- End Logo -->
+
+								{% include 'menu.html' %}
+
+								<!-- Socials -->
+								<div class="socials">
+									<a href="#" title="Behance">
+										<i class="fa fa-behance"></i>
+									</a>
+									<a href="#" title="Dribbble">
+										<i class="fa fa-dribbble"></i>
+									</a>
+									<a href="#" title="Facebook">
+										<i class="fa fa-facebook"></i>
+									</a>
+									<a href="#" title="Google Plus">
+										<i class="fa fa-google-plus"></i>
+									</a>
+									<a href="#" title="Instagram">
+										<i class="fa fa-instagram"></i>
+									</a>
+									<a href="#" title="Search this site">
+										<i class="fa fa-search"></i>
+									</a>
+								</div>
+								<div class="box-search">
+									<div class="table">
+										<div class="table-cell">
+											<div class="container">
+												<form class="search-form" action="#" method="get">
+													<input type="search" name="s" class="search-field" placeholder="Type &amp; hit enter" value="" title="Search">
+													<div class="kd-close">
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- End Socials -->
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-9 col-md-offset-3">
+					<div class="projects">
+						{% block content %}
+						{% endblock %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Wrapper Site -->
+
+
+
