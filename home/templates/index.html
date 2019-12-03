@@ -1,14 +1,15 @@
 {% extends 'header.html' %}
 {% block content %}
-{{ product }}
+{% for product in products %}
 <div class="project-item">
-    <a href="single-project.html">
-        <img src="images/projects/1.jpg" alt="">
+    <a href="./product/{{ product.id }}">
+        <img src="{{ product.images.0.link }}" alt="">
     </a>
     <h2 class="title">
-        <a href="#">Emotions</a>
+        <a href="#">{{ product.title }}</a>
     </h2>
 </div>
+{% endfor %}
 {% endblock %}
 {% include 'footer.html' %}
 

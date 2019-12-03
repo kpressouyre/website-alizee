@@ -2,13 +2,15 @@ from django.shortcuts import render
 from django.http import HttpResponse, Http404
 from .models import About, Contact
 
-from product.models import Product
+from product.models import Product, Image
 
 def index(request):
     about = About.objects.get(pk=1)
     contact = Contact.objects.get(pk=1)
-    product = Product.objects.last()
-    return render(request, 'index.html', {'about': about, 'contact': contact, 'product': product})
+    products = Product.objects.all()
+    for product in products:
+        product.images = Image.objects.filter(product__pk=product.id)
+    return render(request, 'index.html', {'about': about, 'contact': contact, 'products': products})
 
 def about(request):
     try:
